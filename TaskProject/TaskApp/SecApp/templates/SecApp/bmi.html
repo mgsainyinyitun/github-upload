@@ -1,0 +1,47 @@
+{% extends "SecApp/base.html" %}
+{% block content %}
+    <div class = 'container' style="padding-top: 5px">
+        <div class = 'row' mt-5>
+            <div class = 'col'>    
+            </div>
+            <div class = "col-md-8 offset-md-2">
+                <form  class="fcf-form-class" method="POST" action="upload">
+                    {% csrf_token %}
+                        <h1 class="display-5 text-info">Body Mass Index Calculator</h1>
+
+                        <div class="fcf-form-group">
+                            <label for="height" class="fcf-label">Enter your height:</label>
+                            <div class="fcf-input-group">
+                                <input type="height" id="Height" name="height" class="fcf-form-control" required>
+                            </div>
+                        </div>
+                        <div class="fcf-form-group">
+                            <label for="weight" class="fcf-label">Enter your weight:</label>
+                            <div class="fcf-input-group">
+                                <input type="weight" id="Weight" name="weight" class="fcf-form-control" required>
+                            </div>
+                        </div><br><br>
+                        <div class="fcf-form-group">
+                            <button type="submit" id="fcf-button" class="btn btn-success">upload</button>
+                        </div>  
+
+
+
+                <div class="fcf-form-group">
+                <h1 class="text-danger">Your BMI is: <span id="Result"> {{result}} </span></h1>
+                        </div> 
+                        <div class="fcf-form-group">
+                            <h2 class="text-danger">This means you are:  <span id='Status'>{{status}} </span> </h2> 
+                        </div> 
+                    </div>                            
+                </form>
+
+
+        
+            <div class = 'col'>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
